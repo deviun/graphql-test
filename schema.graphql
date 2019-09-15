@@ -1,0 +1,21 @@
+type Query {
+  user(id: ID!): User
+  thing(id: ID!): Thing
+}
+
+type User {
+  id: ID
+  name: String
+  age: Int
+  things: [Thing]
+}
+
+type Thing {
+  id: ID
+  user_id: ID
+  name: String
+}
+
+type Mutation {
+  UpdateUserName(id: ID, name: String!): User
+}
